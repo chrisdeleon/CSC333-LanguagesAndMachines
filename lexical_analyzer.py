@@ -20,14 +20,7 @@ def tokenize(input_text):
     tokens = [] #token list
 
     token_types = [
-        ('If', r'if'),
-        ('Else', r'else'),
-        ('While', r'while'),
-        ('Break', r'break'),
-        ('Read', r'read'),
-        ('Write', r'write'),
-        ('Function', r'function'),
-        ('Return', r'return'),
+        ('Keyword', r'if|else|while|break|read|write|function|return'),
         ('Float', r'[0-9]+\.[0-9]?[0-9]?[0-9]?'),
         ('Integer', r'[0-9]+'),
         ('Addition', r'\+'),
