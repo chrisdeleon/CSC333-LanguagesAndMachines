@@ -20,6 +20,14 @@ def tokenize(input_text):
     tokens = [] #token list
 
     token_types = [
+        ('If', r'if'),
+        ('Else', r'else'),
+        ('While', r'while'),
+        ('Break', r'break'),
+        ('Read', r'read'),
+        ('Write', r'write'),
+        ('Function', r'function'),
+        ('Return', r'return'),
         ('Float', r'[0-9]+\.[0-9]?[0-9]?[0-9]?'),
         ('Integer', r'[0-9]+'),
         ('Addition', r'\+'),
@@ -45,14 +53,6 @@ def tokenize(input_text):
         ('Semi_Colon', r';'),
         ('Comma', r','),
         ('Identifier', r'[A-Za-z_][A-Za-z0-9_]*'),
-        ('If', r'if'),
-        ('Else', r'else'),
-        ('While', r'while'),
-        ('Break', r'break'),
-        ('Read', r'read'),
-        ('Write', r'write'),
-        ('Function', r'function'),
-        ('Return', r'return'),
         ('Comment', r'#.*')
     ]
 
