@@ -3,7 +3,6 @@ import re #imports regular expression module
 # replace "input" with file location
 with open(r"C:\Users\deleo\CSC333-HW2\input.txt") as input_file:
     input_string = input_file.read()
-
 print(input_file)
 
 class Token:
@@ -14,11 +13,9 @@ class Token:
     #for printing/debugging purposes
     def __repr__(self):
         return f"Token({self.type}, {self.value})"
-    
 
 def tokenize(input_text):
     tokens = [] #token list
-
     token_types = [
         ('Keyword', r'if|else|while|break|read|write|function|return'),
         ('Float', r'[0-9]+\.[0-9]?[0-9]?[0-9]?'),
@@ -56,21 +53,17 @@ def tokenize(input_text):
     for match in re.finditer(token_regex, input_text):
         input_regex_type = match.lastgroup
         value = match.group(input_regex_type)
-
-        print(f"Token Match: {input_regex_type} -> {value}")
-
+        print(f"Token: {input_regex_type} -> {value}")
         tokens.append(Token(input_regex_type, value))
-
     print("All tokens: ")
     print(tokens)
     return tokens
 
-    
+# instance
 tokens = tokenize(input_string)
 
 # replace "output" with file location
 with open('C:\\Users\\deleo\\CSC333-HW2\\output.txt', 'w') as output_file:
     for token in tokens:
         output_file.write(f"{token}\n")
-
 print("Tokens now written")
