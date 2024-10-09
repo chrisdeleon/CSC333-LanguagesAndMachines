@@ -1,1 +1,4 @@
-This is my input file!
+{
+while (i < 0) {i = anIdent234 12
+	if i22! = 0 return 4;
+}
